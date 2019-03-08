@@ -23,6 +23,7 @@ Todo: Help friend move. Done? False. Due on: 3/22/19
 Todo: Clean house. Done? False. Due on: 3/8/19
 Todo: Clean house. Done? True. Due on: 3/8/19
 Todo: Do laundry. Done? False. Due on: 3/9/19
+
 Incomplete Todos
 ---------
 Todo: Do laundry. Done? False. Due on: 3/9/19
@@ -48,9 +49,10 @@ namespace Todos
 //            Add some less important things...
 
             todoList.AddLeastPriorityTodo(
-                new Todo() {
+                new Todo()
+                {
                     Text = "Take clothes to Goodwill",
-                    DueDate = DateTime.Today.AddDays(7)
+                    DueDate = DateTime.Today.AddDays(7),
                 }
             );
             todoList.AddLeastPriorityTodo(
@@ -61,8 +63,9 @@ namespace Todos
             );
 
 
-/*
-            // Add some more important things...
+
+//            Add some more important things...
+
             todoList.AddTopPriorityTodo(
                 new Todo() {
                     Text = "Do laundry",
@@ -75,26 +78,24 @@ namespace Todos
                     DueDate = DateTime.Today
                 }
             );
-*/
 
-/*
             // Print a report of Todos
             Console.WriteLine("All Todos");
             Console.WriteLine("---------");
-            todoList.PrintAll();
+            todoList.ListTodos();
             Console.WriteLine("---------");
             Console.WriteLine();
-*/
 
 
-/*
-            // Print some individual Todos:
-            // Should be "Help friend move"
+
+
+            //Print some individual Todos:
+           //Should be "Help friend move"
             Todo helpMove = todoList.GetElementAt(3);
             Console.WriteLine(helpMove);
-*/
 
-/*
+
+
             bool includeComplete = false;
             Todo cleanHouse = todoList.GetTopPriorityTodo(includeComplete);
             Console.WriteLine(cleanHouse);
@@ -103,7 +104,7 @@ namespace Todos
             // Now the top, INCOMPLETE priority todo is laundry
             Todo laundry = todoList.GetTopPriorityTodo(includeComplete);
             Console.WriteLine(laundry);
-*/
+
 
 /*
             // Print a report of incomplete Todos
