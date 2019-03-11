@@ -84,7 +84,6 @@ namespace Todos
             Console.WriteLine("---------");
             todoList.ListTodos();
             Console.WriteLine("---------");
-            Console.WriteLine();
 
 
 
@@ -95,15 +94,14 @@ namespace Todos
             Console.WriteLine(helpMove);
 
 
-
             bool includeComplete = false;
             Todo cleanHouse = todoList.GetTopPriorityTodo(includeComplete);
             Console.WriteLine(cleanHouse);
-            cleanHouse.IsComplete = true;
-            Console.WriteLine(cleanHouse);
-            // Now the top, INCOMPLETE priority todo is laundry
-            Todo laundry = todoList.GetTopPriorityTodo(includeComplete);
-            Console.WriteLine(laundry);
+            // cleanHouse.IsComplete = true;
+            // Console.WriteLine(cleanHouse);
+            // // Now the top, INCOMPLETE priority todo is laundry
+            // Todo laundry = todoList.GetTopPriorityTodo(includeComplete);
+            // Console.WriteLine(laundry);
 
 
 /*
