@@ -33,6 +33,7 @@ namespace Todos
         {
             ToDoList.Add(todo);
         }
+
         public void ListTodos()
         {
             foreach (Todo todo in ToDoList)
@@ -52,18 +53,39 @@ namespace Todos
         // add the appropriate code to complete this method
         public Todo GetTopPriorityTodo(bool includeCompleted)
         {
+            Todo highestPriority = new Todo();
             foreach (Todo todo in ToDoList)
             {
-                Todo highestPriority;
-
-                if (includeCompleted == false){
-                    highestPriority = ToDoList.Where(x => !x.IsComplete== true).OrderBy(y => y.DueDate).FirstOrDefault();
+                if (includeCompleted == false)
+                {
+                    highestPriority = ToDoList.Where(x => x.IsComplete == false).OrderBy(y => y.DueDate).FirstOrDefault();
                 }
-                else{
+                else
+                {
                     highestPriority = ToDoList.OrderBy(x => x.DueDate).FirstOrDefault();
                 }
-            return highestPriority;
             }
+            return highestPriority;
+        }
+
+        public void PrintIncomplete()
+        {
+            foreach (Todo todo in ToDoList)
+            {
+                if (todo.IsComplete == false)
+                {
+                    Console.WriteLine($"Todo: {todo.Text} IsComplete: {todo.IsComplete} Due: {todo.DueDate.ToShortDateString()}");
+                }
+            }
+        }
+
+        public static Random randomTodo = new Random();
+
+        public Todo GetRandomTodo()
+        {
+            int index = randomTodo.Next(0, ToDoList.Count);
+
+            return ToDoList[index];
         }
     }
 }

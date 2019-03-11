@@ -97,14 +97,14 @@ namespace Todos
             bool includeComplete = false;
             Todo cleanHouse = todoList.GetTopPriorityTodo(includeComplete);
             Console.WriteLine(cleanHouse);
-            // cleanHouse.IsComplete = true;
-            // Console.WriteLine(cleanHouse);
-            // // Now the top, INCOMPLETE priority todo is laundry
-            // Todo laundry = todoList.GetTopPriorityTodo(includeComplete);
-            // Console.WriteLine(laundry);
+            cleanHouse.IsComplete = true;
+            Console.WriteLine(cleanHouse);
+            // Now the top, INCOMPLETE priority todo is laundry
+            Todo laundry = todoList.GetTopPriorityTodo(includeComplete);
+            Console.WriteLine(laundry);
 
 
-/*
+
             // Print a report of incomplete Todos
             // Should be everything except "Clean House"
             Console.WriteLine();
@@ -113,13 +113,13 @@ namespace Todos
             todoList.PrintIncomplete();
             Console.WriteLine("---------");
             Console.WriteLine();
-*/
 
-/*
+
+
             Todo randomTodo = todoList.GetRandomTodo();
             Console.WriteLine("A random todo");
             Console.WriteLine(randomTodo);
-*/
+
         }
     }
 }
